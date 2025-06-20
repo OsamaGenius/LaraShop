@@ -1,0 +1,199 @@
+@import "bootstrap/scss/bootstrap";
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+$light: #bdc3c7;
+$lighter: #f5f6fa;
+$dark: #27354a;
+$darker: #1e2939;
+$active: #f1c745;
+
+body {
+    font-family: "Calibri", "Tahoma", "Arial", "helvetica", "Gill Sans",
+        "Trebuchet MS", sans-serif;
+    letter-spacing: 1.1px;
+}
+
+.card {
+    .card-header {
+        position: relative;
+        .card-title {
+            position: relative;
+            top: 3px;
+        }
+        .card-tools {
+            position: absolute;
+            right: 15px;
+            top: 13px;
+            color: #{$lighter};
+            &:hover {
+                color: #{$light};
+            }
+        }
+    }
+}
+
+/**
+** Global Class
+**/
+.w-100px {
+    min-width: 30%;
+}
+
+.upload-area {
+    width: 100%;
+    color: #666;
+    padding: 2rem;
+    cursor: pointer;
+    text-align: center;
+    background: #{$lighter};
+    border-radius: 10px;
+    border: 2px dashed #{$dark}50;
+    transition: border-color 0.3s ease;
+    &:hover {
+        border-color: #{$darker}90;
+    }
+    .note {
+        font-size: .75em;
+        color: #{$darker}80;
+    }
+    #preview{
+        img {
+            margin-top: 1rem;
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+        }
+    }
+}
+
+textarea {
+    &.form-control {
+        min-height: 200px!important;
+    }
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+    thead {
+        tr {
+            th {
+                background: transparent;
+                color: #{$lighter};
+            }
+        }
+    }
+    tbody {
+        background-color: #{$lighter};
+        tr {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            td {
+                background: transparent;
+            }
+        }
+    }
+}
+
+.brand-logo {
+    width: 150px;
+}
+
+.table-img {
+    width: 80px;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.bg-text-main {
+    @extend .bg-gradient-dark;
+    color: #{$lighter};
+}
+
+.text-main {
+    color: #{$darker};
+    &:hover {
+        color: #{$dark};
+    }
+}
+
+.bg-gradient-light {
+    background: linear-gradient(
+        45deg,
+        #{$light} 5%,
+        #{$lighter} 50%,
+        #{$light} 95%
+    );
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(
+        45deg,
+        #{$darker} 5%,
+        #{$dark} 50%,
+        #{$darker} 95%
+    );
+}
+
+.border-top-light {
+    border-top: 1px solid #{$light};
+}
+
+.shadow-light {
+    box-shadow: 0px 4px 6px 1px #{$light};
+}
+
+.shadow-dark {
+    box-shadow: 0px 4px 6px 1px #{$dark};
+}
+
+.divider-light {
+    width: 100%;
+    height: 1px;
+    background: #{$light};
+}
+
+/**
+** Control Panel Design
+**/
+
+.panel {
+    header {
+        color: #{$lighter} !important;
+        .elements {
+            position: relative;
+            top: -25px;
+        }
+        .nav {
+            li {
+                .nav-link {
+                    color: #{$lighter} !important;
+                    font-size: 1.15em;
+                    &:hover,
+                    &.active {
+                        color: #{$active} !important;
+                    }
+                }
+            }
+        }
+        .profile {
+            color: #{$lighter} !important;
+            &:hover {
+                color: #{$light} !important;
+            }
+        }
+    }
+    .content {
+        background-color: #{$lighter};
+        position: relative;
+        margin-top: -50px;
+        box-shadow: 0 0 4px 0px #{$dark};
+        min-height: 100vh;
+        // Start Members Section
+        .members {
+            // 
+        }
+    }
+}
