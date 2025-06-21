@@ -15,6 +15,16 @@ class PanelAuthController extends Controller
         return view('admin.index');
     }
 
+    public function forgetPass()
+    {
+        return view('admin.reset.forget');
+    }
+
+    public function resetPass()
+    {
+        return view('admin.reset.reset');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -190,6 +190,44 @@ textarea {
 }
 
 /**
+* |=========================================================================================
+* |  Authentication Pages Design [Login Page, Reset Password Page, and New Password Page]
+* |=========================================================================================
+*/ 
+.auth {
+    background: #d3d3d3;
+    .holder {
+        position: relative;
+        width: min(500px, 100%);
+        background: #ffffff60;
+        margin: 5rem auto;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px 0px #afafaf99;
+        padding: min(2rem, 10%);
+        h3 {
+            color: #0000009e;
+        }
+        .image {
+            img {
+                width: min(200px, 50%);
+            }
+        }
+        .form-control {
+            background: #ffffff60;
+            box-shadow: 0 0 3px 0px #afafaf50;
+            border: 1px solid #a1a1a150;
+            &:hover,
+            &:focus {
+                background: #ffffff;
+            }
+            &:focus {
+                box-shadow: 0 0 1px 4px #afafaf42;
+            }
+        }
+    }
+}
+
+/**
 ** Control Panel Design
 **/
 
