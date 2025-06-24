@@ -18,7 +18,7 @@
     </x-form.input_req>
 
     <div class="text-start">
-        <a class="text-decoration-none" href="{{route('pass.forget')}}">{{__('Forget Password')}}</a>
+        <a class="text-decoration-none" href="{{route('admin.pass.forget')}}">{{__('Forget Password')}}</a>
     </div>
 
     <div class="text-end mb-0">
