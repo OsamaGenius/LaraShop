@@ -16,13 +16,13 @@ Route::prefix('/admin')->group(function() {
     Route::controller(PanelAuthController::class)->group(function() {
 
         // Login Page
-        Route::get('/', 'index')->name('login');
+        Route::get('/', 'index')->name('admin.login');
 
         // Send verifiction codes using on of authenicated info
-        Route::get('/forget', 'forgetPass')->name('pass.forget');
+        Route::get('/forget', 'forgetPass')->name('admin.pass.forget');
 
         // Add new password page and reset it
-        Route::get('/reset', 'resetPass')->name('pass.reset');
+        Route::get('/reset', 'resetPass')->name('admin.pass.reset');
 
     });
     
