@@ -16,8 +16,15 @@
 <body class="auth">
     
     <div class="container">
-
+        
         <div class="holder">
+
+            @if (session('error'))
+                <x-messages>
+                    <x-slot:class>{{__('alert-danger')}}</x-slot:class>
+                    {{ session('error') }}
+                </x-messages>
+            @endif
 
             <div class="image text-center mb-3">
                 <img src="{{asset('imgs/Logo.png')}}" alt="Logo">
