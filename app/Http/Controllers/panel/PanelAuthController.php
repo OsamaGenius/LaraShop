@@ -28,7 +28,7 @@ class PanelAuthController extends Controller
             'password' => ['required'],
         ]);
         // Check if the data === storage data
-        if(Auth::attempt([
+        if(Auth::guard('panel')->attempt([
             'email' => $credentials['email'], 
             'password' => $credentials['password'], 
             'group_id' => 1
@@ -36,7 +36,7 @@ class PanelAuthController extends Controller
             // Start user session
             $request->session()->regenerate();
             // Redirect users to the dashbard page
-            return redirect()->intended('dashboard');
+            return redirect()->intended(route('dashboard'));
         }
         // Redirect user back with error msg
         return back()->with('error', 'This provided credentails do not matches our recordes, only admins are allowed to access the control panel');
@@ -47,7 +47,14 @@ class PanelAuthController extends Controller
      */
     public function logout(Request $request)
     {
-        //
+        // Logout admin user from the system
+        Auth::guard('panel')->logout();
+        // Invalidate user session
+        $request->session()->invalidate();
+        // Regenerate user session
+        $request->session()->regenerate();
+        // Redirect user to login page
+        return redirect()->route('admin.login')->with('success', 'Successfully logged out from the control panel.');
     }
 
     /**

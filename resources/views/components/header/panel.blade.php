@@ -35,7 +35,7 @@
                     <li><a class="dropdown-item" href="#">{{__('New project')}}</a></li> 
                     <li><a class="dropdown-item @if($pagename == 'Profile') active @endif" href="{{route('profile')}}">{{__('Profile')}}</a></li> 
                     <li><hr class="dropdown-divider"></li> 
-                    <li><a class="dropdown-item" href="#">{{__('Sign out')}}</a></li> 
+                    <li><a class="dropdown-item" href="{{route('admin.logout')}}">{{__('Sign out')}}</a></li> 
                 </ul> 
             </div> 
         

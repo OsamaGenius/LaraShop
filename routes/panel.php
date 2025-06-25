@@ -20,6 +20,9 @@ Route::prefix('/admin')->group(function() {
         
         // Login Action
         Route::post('/login', 'login')->name('admin.login.exec');
+        
+        // Logout Action
+        Route::get('/logout', 'logout')->name('admin.logout');
 
         // Send verifiction codes using on of authenicated info
         Route::get('/forget', 'forgetPass')->name('admin.pass.forget');
