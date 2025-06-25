@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Middleware\Panel;
+use App\Http\Middleware\AuthenticateAdmin;
 use App\Http\Controllers\Panel\PanelAuthController;
 use App\Http\Controllers\Panel\MembersController;
 use App\Http\Controllers\Panel\ProductsController;
@@ -32,7 +32,7 @@ Route::prefix('/admin')->group(function() {
     /* 
     ** Routes That Is Needs Authntication
     */
-    Route::middleware(Panel::class)->group(function() {
+    Route::middleware(AuthenticateAdmin::class)->group(function() {
 
         // Dashboard Page
         Route::get('/dashboard', function() {
