@@ -1,5 +1,5 @@
 <div class="profile-page">
-    
+
     {{-- User Image & personal details --}}
     <div class="row row-cols-1 row-cols-lg-2 g-4 mb-3">
 
@@ -9,7 +9,7 @@
                 <h3 class="title pb-1 mb-2 text-start">{{__('Profile Image')}}</h3>
                 <div class="divider-lighter shadow-sm mb-3"></div>
                 <div class="d-flex justify-content-center align-items-center flex-column">
-                    <img class="d-block w-50 rounded-circle border border-3 border-light shadow-sm mb-3" src="{{asset('imgs/1602917114902b.jpg')}}" alt="User Image">
+                    <img class="d-block w-50 rounded-circle border border-3 border-light shadow-sm mb-3" src="{{asset('storage/'.Auth::guard("$guard")->user()->file)}}" alt="User Image">
                     <form action="" method="post">
                         <div class="d-flex justify-content-center align-items-center mb-3">
                             <input type="file" name="file" id="file" class="form-control w-75">
@@ -36,7 +36,7 @@
                         <div class="flex-grow-1">
                             <x-form.input_req>
                                 <x-slot:placeholder>{{__('User Full Name ex:Ahmed Osman')}}</x-slot:placeholder>
-                                <x-slot:value>{{old('name')}}</x-slot:value>
+                                <x-slot:value>{{Auth::guard("$guard")->user()->name}}</x-slot:value>
                                 <x-slot:known>{{__('name')}}</x-slot:known>
                                 <x-slot:type>{{__('text')}}</x-slot:type>
                             </x-form.input_req>
@@ -55,7 +55,7 @@
                         <div class="flex-grow-1">
                             <x-form.input_req>
                                 <x-slot:placeholder>{{__('Userame ex:AhmedMarket')}}</x-slot:placeholder>
-                                <x-slot:value>{{old('username')}}</x-slot:value>
+                                <x-slot:value>{{Auth::guard("$guard")->user()->username}}</x-slot:value>
                                 <x-slot:known>{{__('username')}}</x-slot:known>
                                 <x-slot:type>{{__('text')}}</x-slot:type>
                             </x-form.input_req>
@@ -75,7 +75,7 @@
                     <div class="flex-grow-1">
                         <x-form.input_readonly>
                             <x-slot:placeholder>{{__('Primary Email')}}</x-slot:placeholder>
-                            <x-slot:value>{{old('email')}}</x-slot:value>
+                            <x-slot:value>{{Auth::guard("$guard")->user()->email}}</x-slot:value>
                             <x-slot:known>{{__('email')}}</x-slot:known>
                             <x-slot:type>{{__('email')}}</x-slot:type>
                         </x-form.input_readonly>
@@ -120,7 +120,7 @@
                         <div class="col">
                             <x-form.input_req>
                                 <x-slot:placeholder>{{__('Address Line 1 ex: kingswood road')}}</x-slot:placeholder>
-                                <x-slot:value>{{old('address_line1')}}</x-slot:value>
+                                <x-slot:value>{{Auth::guard("$guard")->user()->UserAddress[0]->address_line1}}</x-slot:value>
                                 <x-slot:known>{{__('address_line1')}}</x-slot:known>
                                 <x-slot:type>{{__('text')}}</x-slot:type>
                             </x-form.input_req>
@@ -129,7 +129,7 @@
                         <div class="col">
                             <x-form.input_req>
                                 <x-slot:placeholder>{{__('Address Line 2 ex: flat 2 wood road')}}</x-slot:placeholder>
-                                <x-slot:value>{{old('address_line2')}}</x-slot:value>
+                                <x-slot:value>{{Auth::guard("$guard")->user()->UserAddress[0]->address_line2}}</x-slot:value>
                                 <x-slot:known>{{__('address_line2')}}</x-slot:known>
                                 <x-slot:type>{{__('text')}}</x-slot:type>
                             </x-form.input_req>

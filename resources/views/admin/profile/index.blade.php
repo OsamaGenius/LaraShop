@@ -5,7 +5,7 @@
     <x-slot:pagename>{{ 'Profile' }}</x-slot:pagename>
 
     <x-profile>
-        {{-- Current User Session Data --}}
+        <x-slot:guard>{{'panel'}}</x-slot:guard>
     </x-profile>
 
 </x-layout.main>
