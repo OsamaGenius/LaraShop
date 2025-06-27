@@ -9,10 +9,10 @@
             </h1> 
             
             <ul class="nav col-12 col-lg-auto mx-lg-auto mb-2 mb-md-0"> 
-                <li><a href="{{route('dashboard')}}" class="nav-link px-2 @if($pagename == 'Dashboard') active @endif">Dashboard</a></li> 
-                <li><a href="{{route('products')}}" class="nav-link px-2 @if($pagename == 'Products') active @endif">Products</a></li> 
-                <li><a href="{{route('categories')}}" class="nav-link px-2 @if($pagename == 'Categories') active @endif">Categories</a></li> 
-                <li><a href="{{route('members')}}" class="nav-link px-2 @if($pagename == 'Members') active @endif">Members</a></li> 
+                <li><a href="{{route('dashboard')}}" class="nav-link px-2 @if($pagename == 'Dashboard') active @endif">{{__('Dashboard')}}</a></li> 
+                <li><a href="{{route('products')}}" class="nav-link px-2 @if($pagename == 'Products') active @endif">{{__('Products')}}</a></li> 
+                <li><a href="{{route('categories')}}" class="nav-link px-2 @if($pagename == 'Categories') active @endif">{{__('Categories')}}</a></li> 
+                <li><a href="{{route('members')}}" class="nav-link px-2 @if($pagename == 'Members') active @endif">{{__('Members')}}</a></li> 
             </ul> 
             
             <a href="" class="profile d-block link-body-emphasis">
@@ -29,7 +29,7 @@
             
             <div class="dropdown text-end"> 
                 <a href="#" class="profile d-block link-body-emphasis text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
-                     <img src="{{asset('imgs/1602917114902b.jpg')}}" alt="mdo" width="32" height="32" class="rounded-circle"> 
+                     <img src="{{asset('storage/'.Auth::guard('panel')->user()->file)}}" alt="mdo" width="32" height="32" class="rounded-circle"> 
                 </a>
                 <ul class="dropdown-menu text-small" style=""> 
                     <li><a class="dropdown-item" href="#">{{__('New project')}}</a></li> 
