@@ -1,4 +1,4 @@
-<x-layout.main>
+<x-layout.panel>
     <x-slot:title>{{ __('Managing Products') }}</x-slot:title>
     <x-slot:pagename>{{ __('Products') }}</x-slot:pagename>
 
@@ -121,4 +121,4 @@
 
     </section>
 
-</x-layout.main>
+</x-layout.panel>

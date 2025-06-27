@@ -1,4 +1,4 @@
-<x-layout.main>
+<x-layout.panel>
     <x-slot:title>{{ 'Dashboard' }}</x-slot:title>
     <x-slot:pagename>{{ __('Dashboard') }}</x-slot:pagename>
     <div class="container-fluid">
@@ -140,4 +140,4 @@
             }
         });
     </script>
-</x-layout.main>
+</x-layout.panel>

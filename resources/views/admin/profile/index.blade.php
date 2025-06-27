@@ -1,4 +1,4 @@
-<x-layout.main>
+<x-layout.panel>
 
     <x-slot:title>{{ 'User Profile Details' }}</x-slot:title>
 
@@ -8,4 +8,4 @@
         <x-slot:guard>{{'panel'}}</x-slot:guard>
     </x-profile>
 
-</x-layout.main>
+</x-layout.panel>

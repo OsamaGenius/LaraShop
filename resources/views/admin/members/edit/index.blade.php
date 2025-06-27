@@ -1,4 +1,4 @@
-<x-layout.main>
+<x-layout.panel>
     <x-slot:title>{{ __('Adding New Members') }}</x-slot:title>
     <x-slot:pagename>{{ __('Members') }}</x-slot:pagename>
 
@@ -150,4 +150,4 @@
 
     </section>
 
-</x-layout.main>
+</x-layout.panel>

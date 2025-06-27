@@ -1,4 +1,4 @@
-<x-layout.main>
+<x-layout.panel>
     <x-slot:title>{{__('Managing Categories')}}</x-slot:title>
     <x-slot:pagename>{{__('Categories')}}</x-slot:pagename>
 
@@ -47,4 +47,4 @@
 
     </section>
 
-</x-layout.main>
+</x-layout.panel>
