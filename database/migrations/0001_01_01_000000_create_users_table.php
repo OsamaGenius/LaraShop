@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->integer('group_id')->default(0)->description('Shows if the current user is Admin or not');
             $table->integer('approvent')->default(0)->description('User Status that prevent or allow him from accessing the system');
+            $table->string('resetToken')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
