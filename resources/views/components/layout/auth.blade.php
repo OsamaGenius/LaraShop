@@ -19,6 +19,13 @@
         
         <div class="holder">
 
+            @if (session('success'))
+                <x-messages>
+                    <x-slot:class>{{__('alert-success')}}</x-slot:class>
+                    {{ session('success') }}
+                </x-messages>
+            @endif
+
             @if (session('error'))
                 <x-messages>
                     <x-slot:class>{{__('alert-danger')}}</x-slot:class>

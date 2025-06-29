@@ -24,11 +24,17 @@ Route::prefix('/admin')->group(function() {
         // Logout Action
         Route::get('/logout', 'logout')->name('admin.logout');
 
-        // Send verifiction codes using on of authenicated info
+        // Send verifiction codes using on of authenicated info page
         Route::get('/forget', 'forgetPass')->name('admin.pass.forget');
 
+        // Send verifiction codes using on of authenicated info execution
+        Route::post('/forget/exec', 'forgetPassExec')->name('admin.pass.forget.exec');
+
         // Add new password page and reset it
-        Route::get('/reset', 'resetPass')->name('admin.pass.reset');
+        Route::get('/reset/{token}/{email}', 'resetPass')->name('admin.pass.reset');
+
+        // Reset Password Logic
+        Route::put('/reset/{token}/{email}/exec', 'resetPassExec')->name('admin.pass.reset.exec');
 
     });
     

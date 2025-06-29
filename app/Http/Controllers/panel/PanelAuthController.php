@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\panel;
 
+use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Mail\SendingCodes;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class PanelAuthController extends Controller
 {
@@ -65,11 +69,67 @@ class PanelAuthController extends Controller
         return view('admin.reset.forget');
     }
 
+    public function forgetPassExec(Request $request)
+    {
+        // Validate request data
+        $data = $request->validate([
+            'email' => ['required', 'email'],
+        ]);
+        // Check if their is a user with the provided email
+        $admin = User::where('email', $data['email'])->first();
+        if (!$admin) {
+            return redirect()->back()->with('error', 'The provided email is not exsist in our storage');
+        }
+        // Generate reset token
+        $token = hash('sha256', time());
+        $admin->resetToken = $token;
+        $admin->update();
+        // Send Mail
+        $link = route('admin.pass.reset', [
+            'token' => $token, 
+            'email' => $data['email']
+        ]);
+        $subject = 'Reset Password';
+        $message = 'Please click in this link to reset your password:<br>';
+        $message .= '<a href="'.$link.'">Reset My Password</a>';
+
+        Mail::to($data['email'])->send(new SendingCodes($subject, $data['email']));
+
+        return redirect()->back()->with('success', 'Successfully send reset link to your email ' . $data['email']);
+    }
+
     /**
      * Display reset password page.
      */
-    public function resetPass()
+    public function resetPass($token, $email)
     {
-        return view('admin.reset.reset');
+        $admin = User::where('resetToken', $token)->where('email', $email)->first();
+        if(!$admin) {
+            return redirect()->route('admin.login')->with('error', 'The provided token or email is incorrect.');
+        }
+        return view('admin.reset.reset', [
+            'token' => $token,
+            'email' => $email
+        ]);
     }
+
+    /**
+     * Display reset password logic.
+     */
+    public function resetPassExec(Request $request, $token, $email)
+    {
+        $admin = User::where('resetToken', $token)->where('email', $email)->first();
+        if(!$admin) {
+            return redirect()->route('admin.login')->with('error', 'Invalid token or email'); 
+        }
+        $data = $request->validate([
+            'password' => ['required'],
+            'new_password' => ['required', 'same:password'],
+        ]);
+        $admin->resetToken = '';
+        $admin->password = Hash::make($data['password']);
+        $admin->update();
+        return redirect()->route('admin.login')->with('success', 'Successfully change email ' . $email . ' password.'); 
+    }
+    
 }
