@@ -1,7 +1,8 @@
 <x-layout.auth>
-    <x-slot:title>{{__('Login to start your session')}}</x-slot:title>
+    <x-slot:method>{{'POST'}}</x-slot:method>
     <x-slot:route>{{route('admin.login.exec')}}</x-slot:route>
     <x-slot:pagename>{{__('Login into LaraShop')}}</x-slot:pagename>
+    <x-slot:title>{{__('Login to start your session')}}</x-slot:title>
 
     <x-form.input_req>
         <x-slot:type>{{__('text')}}</x-slot:type>

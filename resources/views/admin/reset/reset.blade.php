@@ -1,7 +1,8 @@
 <x-layout.auth>
-    <x-slot:title>{{__('Enter your new password, make sure to make it strong.')}}</x-slot:title>
+    <x-slot:method>{{''}}</x-slot:method>
     <x-slot:route>{{''}}</x-slot:route>
     <x-slot:pagename>{{__('Forget LaraShop Account Password')}}</x-slot:pagename>
+    <x-slot:title>{{__('Enter your new password, make sure to make it strong.')}}</x-slot:title>
 
     <x-form.input_req>
         <x-slot:type>{{__('password')}}</x-slot:type>

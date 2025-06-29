@@ -32,7 +32,7 @@
 
             <h4 class="text-center mb-4">{{$title}}</h4>
             
-            <form action="{{$route}}" method="post">
+            <form action="{{$route}}" method="{{$method}}">
 
                 @csrf
 

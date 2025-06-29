@@ -1,7 +1,8 @@
 <x-layout.auth>
-    <x-slot:title>{{__('Write your email account to send verifiction code.')}}</x-slot:title>
-    <x-slot:route>{{''}}</x-slot:route>
+    <x-slot:method>{{'POST'}}</x-slot:method>
+    <x-slot:route>{{route('admin.pass.forget.exec')}}</x-slot:route>
     <x-slot:pagename>{{__('Forget LaraShop Account Password')}}</x-slot:pagename>
+    <x-slot:title>{{__('Write your email account to send verifiction code.')}}</x-slot:title>
 
     <x-form.input_req>
         <x-slot:type>{{__('email')}}</x-slot:type>
