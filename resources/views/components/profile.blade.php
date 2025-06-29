@@ -120,7 +120,7 @@
                         <div class="col">
                             <x-form.input_req>
                                 <x-slot:placeholder>{{__('Address Line 1 ex: kingswood road')}}</x-slot:placeholder>
-                                <x-slot:value>{{Auth::guard("$guard")->user()->UserAddress[0]->address_line1}}</x-slot:value>
+                                <x-slot:value>{{Auth::guard("$guard")->user()->UserAddress[0]->address_line1 ?? ''}}</x-slot:value>
                                 <x-slot:known>{{__('address_line1')}}</x-slot:known>
                                 <x-slot:type>{{__('text')}}</x-slot:type>
                             </x-form.input_req>
@@ -129,7 +129,7 @@
                         <div class="col">
                             <x-form.input_req>
                                 <x-slot:placeholder>{{__('Address Line 2 ex: flat 2 wood road')}}</x-slot:placeholder>
-                                <x-slot:value>{{Auth::guard("$guard")->user()->UserAddress[0]->address_line2}}</x-slot:value>
+                                <x-slot:value>{{Auth::guard("$guard")->user()->UserAddress[0]->address_line2 ?? ''}}</x-slot:value>
                                 <x-slot:known>{{__('address_line2')}}</x-slot:known>
                                 <x-slot:type>{{__('text')}}</x-slot:type>
                             </x-form.input_req>
