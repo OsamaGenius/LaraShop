@@ -18,8 +18,14 @@
         @endif
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     </head>
-    <body>
-        
+    <body style="background-color: #eee">
+
+        <x-header.main></x-header.main>
+
+        {{$slot}}
+
+        <x-footer.main></x-footer.main>
+
         <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 
     </body>
