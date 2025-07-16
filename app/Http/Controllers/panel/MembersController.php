@@ -140,16 +140,13 @@ class MembersController extends Controller
     public function approve(string $id)
     {
         // Getting the given user name
-        $user = User::Find($id)->only('name');
+        $user = User::where('id', $id)->first();
         // Update target user approvent status
-        $approvent = User::where('id', $id)->update([
-            'approvent' => 1
-        ]);
+        $user->approvent = 1;
         // Success
-        if($approvent):
-            return redirect()->back()->with('success', 'Successfully approved user "'.$user['name'].'" data.');
-        endif;
-        // Failure
-        return redirect()->back()->with('error', 'Unable to approve user "'.$user['name'].'" data, please contact the developer.');
+        $user->resetToken = '';
+        $user->update();
+        return redirect()->back()->with('success', 'Successfully approved user "'.$user->name.'" data.');
+        // return redirect()->back()->with('error', 'Unable to approve user "'.$user->name.'" data, please contact the developer.');
     }
 }
