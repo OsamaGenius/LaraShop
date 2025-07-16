@@ -18,7 +18,7 @@ class UserAuthController extends Controller
      */
     public function loginView()
     {
-        return view('login.index');
+        return view('user.login.index');
     }
 
     /**
@@ -64,7 +64,7 @@ class UserAuthController extends Controller
      */ 
     public function RegView()
     {
-        return view('reg.index');
+        return view('user.reg.index');
     }
 
     /** 
@@ -96,7 +96,7 @@ class UserAuthController extends Controller
         $msg = 'Please click in this link to activate your account:<br>';
         $msg .= $route;
         Mail::to($data['email'])->send(new VerifyAccounts('Activate My Account', $msg));
-        return redirect()->back()->with('success', 'Successfully added user ' . $data['name'] . ' data, please check your email for verifiction link.');
+        return redirect()->route('login')->with('success', 'Successfully added user ' . $data['name'] . ' data, please check your email for verifiction link.');
     }
 
     /** 
@@ -123,7 +123,7 @@ class UserAuthController extends Controller
      */ 
     public function sendCodePage()
     {
-        return view('pass.forget');
+        return view('user.pass.forget');
     }
     
     /**
@@ -171,7 +171,7 @@ class UserAuthController extends Controller
             return redirect()->back()->with('error', 'The provided email is not exsist in our storage');
         endif;
         // Redirect the user to reset password page
-        return view('pass.reset', [
+        return view('user.pass.reset', [
             'token' => $token,
             'email' => $email,
         ]); 

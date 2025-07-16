@@ -40,7 +40,7 @@ class SendingCodes extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.index',
+            view: 'user.mail.index',
             with: [
                 'subject' => $this->subject,
                 'body' => $this->body,

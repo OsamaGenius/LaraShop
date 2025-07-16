@@ -40,7 +40,7 @@ class VerifyAccounts extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.verify',
+            view: 'user.mail.verify',
             with: [
                 'subject' => $this->subject,
                 'body' => $this->body,
