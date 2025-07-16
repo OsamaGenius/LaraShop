@@ -93,7 +93,7 @@ class PanelAuthController extends Controller
         $message = 'Please click in this link to reset your password:<br>';
         $message .= '<a href="'.$link.'">Reset My Password</a>';
 
-        Mail::to($data['email'])->send(new SendingCodes($subject, $data['email']));
+        Mail::to($data['email'])->send(new SendingCodes($subject, $message));
 
         return redirect()->back()->with('success', 'Successfully send reset link to your email ' . $data['email']);
     }
