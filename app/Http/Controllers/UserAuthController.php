@@ -33,7 +33,8 @@ class UserAuthController extends Controller
         if(Auth::guard('web')->attempt([
             'email' => $data['username'], 
             'password' => $data['password'], 
-            'group_id' => 0
+            'group_id' => 0,
+            'approvent' => 1
         ])):
             // User session generate
             $request->session()->regenerate();
