@@ -6,11 +6,25 @@
         <div class="container">
 
             <x-card.shadow>
-                <x-slot:title>{{__('Start your secured session')}}</x-slot:title>
                 <div class="img-logo text-center">
                     <img class="w-75" src="{{asset('imgs/Logo.png')}}" alt="Shop Logo">
                 </div>
                 <div class="pt-5">
+                    
+                    @if (session('success'))
+                        <x-messages>
+                            <x-slot:class>{{__('alert-success')}}</x-slot:class>
+                            {{ session('success') }}
+                        </x-messages>
+                    @endif
+        
+                    @if (session('error'))
+                        <x-messages>
+                            <x-slot:class>{{__('alert-danger')}}</x-slot:class>
+                            {{ session('error') }}
+                        </x-messages>
+                    @endif
+        
                     {{-- Login using Google | Facebook --}}
                     <div class="btn-group w-100 py-4">
                         <button class="btn btn-outline-danger"><i class="fab fa-google me-2"></i>{{__('Google')}}</button>
@@ -21,7 +35,8 @@
                         <i class="fas fa-arrow-right me-3"></i>{{__('OR')}}<i class="fas fa-arrow-left ms-3"></i>
                     </div>
                     {{-- Login using LaraShop Account --}}
-                    <form class="py-3" action="" method="">
+                    <form class="py-3" action="{{route('login.action')}}" method="POST">
+                        @csrf
                         {{-- Email | Username --}}
                         <x-form.input_req>
                             <x-slot:placeholder>{{__('Login using your Email or Username')}}</x-slot:placeholder>
@@ -38,7 +53,7 @@
                         </x-form.input_req>
                         {{-- Submit --}}
                         <div class="d-flex justify-content-between">
-                            <a class="ms-1 text-decoration-none" href="#">{{__('Forget password')}}</a>
+                            <a class="ms-1 text-decoration-none" href="{{route('sendCode.page')}}">{{__('Forget password')}}</a>
                             <button class="btn bg-gradient-dark text-white w-25"><i class="fas fa-unlock me-2"></i>Login</button>
                         </div>
                     </form>
