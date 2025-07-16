@@ -20,7 +20,7 @@
     </head>
     <body style="background-color: #eee">
 
-        <x-header.main></x-header.main>
+        <x-header.main :$pagename></x-header.main>
 
         {{$slot}}
 

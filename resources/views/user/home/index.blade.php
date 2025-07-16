@@ -1,5 +1,6 @@
 <x-layout.main>
     <x-slot:title>{{ 'Welcome To Our Big Store Market' }}</x-slot:title>
+    <x-slot:pagename>{{ '' }}</x-slot:pagename>
     
     {{-- The three row icons --}}
     <x-body.section>

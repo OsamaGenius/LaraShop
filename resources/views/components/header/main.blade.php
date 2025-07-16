@@ -78,9 +78,12 @@
 
 @if (Route::currentRouteName() !== 'home')
 
-    <nav class="breadcrumb mb-0 w-100">
+    <nav class="mb-0 pt-3 pb-1 bg-white shadow-sm" style="--bs-breadcrumb-divider: '|'" aria-label="breadcrumb">
         <div class="container">
-            this is breadcrumb
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="text-decoration-none" href="{{route('home')}}">{{__('Home')}}</a></li>
+                <li class="breadcrumb-item active">{{$pagename}}</li>
+            </ol>
         </div>
     </nav>
 
