@@ -30,20 +30,37 @@ Route::prefix('/')->group(function() {
 
     // Homepage Route
     Route::get('/', function () {
-        $test = 'This is test data';
         return view('user.home.index');
     })->name('home');
     
+    // Shop Page Route
+    Route::get('shop', function () {
+        return view('user.shop.index');
+    })->name('shop');
+    
     // About Page Route
     Route::get('about', function () {
-        $test = 'This is test data';
         return view('user.about.index');
     })->name('about');
     
     // Contact us Page Route
     Route::get('contact', function () {
-        $test = 'This is test data';
         return view('user.contact.index');
     })->name('contact');
+    
+    // Frequent Asked Question Page Route
+    Route::get('FAQ', function () {
+        return view('user.faq.index');
+    })->name('faq');
+    
+    // Blogs Page Route
+    Route::get('blogs', function () {
+        return view('user.blogs.index');
+    })->name('blogs');
+    
+    // Support Page Route
+    Route::get('support', function () {
+        return view('user.support.index');
+    })->name('support');
 
 });

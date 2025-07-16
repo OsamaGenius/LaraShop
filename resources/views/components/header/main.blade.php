@@ -27,25 +27,25 @@
                 {{-- Main Links --}}
                 <ul class="navbar-nav w-100 justify-content-center">
                     <li class="nav-item">
-                        <a href="{{route('home')}}" class="nav-link @if (Route::currentRouteName() === 'home') active @endif">Home</a>
+                        <a href="{{route('home')}}" class="nav-link @if (Route::currentRouteName() === 'home') active @endif">{{__('Home')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Shop</a>
+                        <a href="{{route('shop')}}" class="nav-link @if (Route::currentRouteName() === 'shop') active @endif">{{__('Shop')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">About</a>
+                        <a href="{{route('about')}}" class="nav-link @if (Route::currentRouteName() === 'about') active @endif">{{__('About')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Contact</a>
+                        <a href="{{route('contact')}}" class="nav-link @if (Route::currentRouteName() === 'contact') active @endif">{{__('Contact')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">FAQ</a>
+                        <a href="{{route('faq')}}" class="nav-link @if (Route::currentRouteName() === 'faq') active @endif">{{__('FAQ')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Blogs</a>
+                        <a href="{{route('blogs')}}" class="nav-link @if (Route::currentRouteName() === 'blogs') active @endif">{{__('Blogs')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Support</a>
+                        <a href="{{route('support')}}" class="nav-link @if (Route::currentRouteName() === 'support') active @endif">{{__('Support')}}</a>
                     </li>
                 </ul>
                 {{-- Auth Links --}}
