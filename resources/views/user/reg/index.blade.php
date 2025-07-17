@@ -1,5 +1,5 @@
 <x-layout.main>
-    <x-slot:title>{{ {{__('Create LaraShop Account')}} }}</x-slot:title>
+    <x-slot:title>{{ __('Create LaraShop Account') }}</x-slot:title>
     <x-slot:pagename>{{ __('Create LaraShop Account') }}</x-slot:pagename>
 
     <section class="auth-forms py-5 w-100 w-md-50">
