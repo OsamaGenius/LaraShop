@@ -1,5 +1,6 @@
 <x-layout.main>
-    <x-slot:title>{{ 'Start your session' }}</x-slot:title>
+    <x-slot:title>{{ {{__('Start your session')}} }}</x-slot:title>
+    <x-slot:pagename>{{ __('Login LaraShop Market') }}</x-slot:pagename>
 
     <section class="auth-forms py-5 w-100 w-md-50">
 
